@@ -1,0 +1,57 @@
+﻿<Window x:Class="Checkpoint3_Interface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Checkpoint3_Interface"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Browser" Height="450" Width="800">
+    
+    <Grid Background="#673AB7">
+        <Grid x:Name="NancyGrid" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="TextBox_FileName" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="20"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="Open" Click="btn_OpenNancyFile" Margin="15"/>
+            <Button Grid.Column="2" Grid.Row="0" Content="Delete" Click="btn_DeleteNancyFile" Margin="15"/>
+            <Button Grid.Column="3" Grid.Row="0" Content="Create" Click="btn_CreateNancyFile" Margin="15"/>
+            <Button Grid.Column="4" Grid.Row="0" Content="WPF Browser" Click="btn_wpfBrowser" Margin="15"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="15" Name="TextBlock_Answer" Width="700" Height="320" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#B39DDB"/>
+        </Grid>
+        
+        
+        <Grid x:Name="WebBrowserGrid" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" Content="Bwd" Click="Btn_Bacward" Margin="10"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="FWD" Click="Btn_Forward" Margin="10"/>
+            <TextBox x:Name="TextBox_Filepath" TextAlignment="Center" Background="WhiteSmoke" Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="30"/>
+
+            <Button Grid.Column="3" Grid.Row="0" Content="Open" Click="Btn_OpenFile" Margin="10"/>
+            <Button Grid.Column="4" Grid.Row="0" Content="Delete" Click="Btn_DeleteFile" Margin="10"/>
+            <WebBrowser Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="10" Name="WebBrowser"></WebBrowser>
+        </Grid>
+    </Grid>
+</Window>
